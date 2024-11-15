@@ -1,9 +1,7 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 
-const App = () => {
-  return(
-    <h1>Test! App.js</h1>
-  )
+function App() {
+  return <h1>Hello from React inside Electron!</h1>;
 }
 
 export default App;

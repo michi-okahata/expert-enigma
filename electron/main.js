@@ -1,22 +1,24 @@
 const { app, BrowserWindow, ipcMain } = require('electron');
-const { path } = require('path');
 const { spawn } = require('child_process');
 const { fetch } = require('electron-fetch').default;
+const path = require('path');
 
-const createWindow = async () => {
-  const win = new BrowserWindow({
+let win
+let demoFlask
+
+function createWindow() {
+  win = new BrowserWindow({
     width: 800,
     height: 600,
     webPreferences: {
       contextIsolation: true,
       enableRemoteModule: false,
       nodeIntegration: false,
-      preload: 'C:/Users/michi/password/forge-demo/forge-demo/electron/preload.js'// path.join(__dirname, 'preload.js')
-      // path.join() gives an error, unsure why, seems insane :(.
+      preload: path.join(__dirname, 'preload.js')
     }
   });
 
-  win.loadFile('index.html');
+  win.loadURL(`file://${path.join(__dirname, '../index.html')}`)
 }
 
 const startFlask = () => {
@@ -29,7 +31,7 @@ app.whenReady().then(() => {
   createWindow();
   app.on('activate', function () {
     if (BrowserWindow.getAllWindows().length === 0) createWindow()
-  })
+  });
 });
 
 app.on('window-all-closed', () => {

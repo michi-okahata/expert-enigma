@@ -1,7 +1,17 @@
+<!-- public/index.html -->
 <!DOCTYPE html>
-<html>
-  <head><title>My app</title></head>
-  <body>
-    <p>Test!</p>
-  </body>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Electron React App</title>
+  <!-- Include React and ReactDOM via CDN -->
+  <script src="https://unpkg.com/react/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom/umd/react-dom.development.js" crossorigin></script>
+</head>
+<body>
+  <div id="root"></div>
+  <!-- Link to React entry point -->
+  <script src="../dist/bundle.js"></script>
+</body>
 </html>
