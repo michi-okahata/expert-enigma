@@ -1,6 +1,6 @@
 Motivation: I have 'built' the current SQLite_New front end like dozens of times and I still am not sure what is wrong with it. Here I've set up a boilerplate/skeleton of the stack that packages (npm run make).
 
-What to look at: I set up the Flask API and Electron IPC from scratch and am pretty sure it works (even if the front end (react) is not up yet, if you start the app (npm run start) you can see the flask server is up through localhost:5000/api/demo_get_profile.
+What to look at: I set up the Flask API and Electron IPC from scratch and am pretty sure it works (even if the front end (react) is not up yet, if you start the app (npm run start) you can see the flask server is up through localhost:5000/api/demo_get_profile which returns in json! :)
 
 Requires: flask, electron, electron-fetch, react (?)
 
